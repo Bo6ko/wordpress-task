@@ -41,25 +41,21 @@ function metabox_display( $post ) {
         <input type="text" name="event_date" id="event_date" class="datepicker" autocomplete="off" value="<?php echo get_stored_meta( $post->ID, 'event_date' ); ?>" />
       </div>
 
-      <div style="display: none">
-        <input id="pac-input"
-               class="controls"
-               type="text"
-               placeholder="Enter a location">
-      </div>
-      <div id="map"></div>
-      <div id="infowindow-content">
-          <span id="place-name" class="title"></span><br>
-          <strong>Place ID:</strong> <span id="place-id"></span><br>
-          <span id="place-address"></span>
-      </div>
-
+      <!-- Google autocomplete location -->
       <div class="meta_th">
         <label for="event_location">Event Location</label>
       </div>
       <div class="meta_td">
         <input type="text" name="event_location" id="event_location" autocomplete="off" value="<?php echo get_stored_meta( $post->ID, 'event_location' ); ?>" />
       </div>
+
+
+      <!-- <div class="meta_th">
+        <label for="event_location">Event Location</label>
+      </div>
+      <div class="meta_td">
+        <input type="text" name="event_location" id="event_location"  />
+      </div> -->
 
       <div class="meta_th">
         <label for="event_url">Event URL</label>
@@ -70,14 +66,6 @@ function metabox_display( $post ) {
 
     </div>
   </div>
-
-  <script>
-    $( function() {
-      $( ".datepicker" ).datepicker({
-        showButtonPanel: true
-      });
-    } );
-  </script>
 
   <?php
 
@@ -126,7 +114,7 @@ function load_scripts() {
   wp_register_script('custom', get_template_directory_uri() . '-child/js/custom.js');
   wp_enqueue_script('custom');
 
-  wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBfssYabJvG85T31C8vx-59sC7OIlwbPq4&libraries=places&callback=initMap' );
+  wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBfssYabJvG85T31C8vx-59sC7OIlwbPq4&sensor=false&libraries=places');
   wp_enqueue_script('googlemaps');
 
 }

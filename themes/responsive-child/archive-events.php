@@ -40,7 +40,7 @@ $wp_query->query("post_type=events&meta_key=event_date&orderby=event_date&order=
       $end_event_date = date("Ymd", strtotime($event_date . "+1 days" ));
       $details = 'I should visit ' . $event_name . '. For more infromation you can open URL: ' . $event_url;
 
-      $url = "https://calendar.google.com/calendar/r/eventedit?text=" . $event_name . "&dates=" . $start_event_date . "/" . $end_event_date . "&details=" . $details . "&location=Waldorf+Astoria,+301+Park+Ave+,+New+York,+NY+10022&sf=true&output=xml";
+      $url = "https://calendar.google.com/calendar/r/eventedit?text=" . $event_name . "&dates=" . $start_event_date . "/" . $end_event_date . "&details=" . $details . "&location=" . $event_location . "&sf=true&output=xml";
       ?> <a href="<?php echo $url; ?>">Add to my google calendar</a></td>
     </tr>
 
