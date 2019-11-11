@@ -1,0 +1,9 @@
+/*
+Theme name: Responsive Child
+Theme URI: http://wordpress:88888/
+Description: This is responsive child theme
+Author: Bozhidar Shopov
+Template: responsive
+Version: 0.1
+*/
+@import url("../responsive/style.css");
